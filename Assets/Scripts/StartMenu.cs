@@ -5,13 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-   public void StartGame()
+    public GameObject instructions;
+    public AudioManager audioManager;
+
+    private void Start()
     {
+        audioManager.PlayMenuMusic();
+    }
+
+
+    public void StartGame()
+    {
+        audioManager.StopMenuMusic();
         SceneManager.LoadScene(1);
     }
 
     public void OpenInstructions()
     {
-        //enable instructions screen
+        instructions.SetActive(true);
+    }
+
+    public void CloseInstructions()
+    {
+        instructions.SetActive(false);
     }
 }

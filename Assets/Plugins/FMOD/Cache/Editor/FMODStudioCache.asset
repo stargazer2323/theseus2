@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1566421404325698233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MinotaurBreath
+  m_EditorClassIdentifier: 
+  Path: event:/MinotaurBreath
+  guid: 403756e5bddb844b9e462f2c00e894fb
+  Banks:
+  - {fileID: 9169853651029389875}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1271959717560670034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSteps
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSteps
+  guid: 2f236a5d277f0a41a42b0df7497a827d
+  Banks:
+  - {fileID: 9169853651029389875}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,14 +61,88 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 7726360668106620570}
   - {fileID: 9169853651029389875}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: 2752836512125173841}
+  - {fileID: 1602985138150122547}
+  - {fileID: 6582511138088703426}
+  - {fileID: -1271959717560670034}
+  - {fileID: -1566421404325698233}
   EditorParameters: []
   MasterBanks:
   - {fileID: 9169853651029389875}
   StringsBanks:
   - {fileID: 7726360668106620570}
-  stringsBankWriteTime: 637388936915889646
+  stringsBankWriteTime: 637390721468441099
   cacheVersion: 5
+--- !u!114 &1602985138150122547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MinotaurSteps
+  m_EditorClassIdentifier: 
+  Path: event:/MinotaurSteps
+  guid: 023006b998bef943992e33434146775c
+  Banks:
+  - {fileID: 9169853651029389875}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2752836512125173841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/MenuMusic
+  guid: 17eada9cb937254abfcb7db2ff8666d0
+  Banks:
+  - {fileID: 9169853651029389875}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 78471
+--- !u!114 &6582511138088703426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience
+  guid: 1d6643ae4cb78e4d842913237db768f1
+  Banks:
+  - {fileID: 9169853651029389875}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &7726360668106620570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,11 +157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637388936915889646
+  lastModified: 637390721468441099
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 700
+    Value: 944
   Exists: 1
 --- !u!114 &9169853651029389875
 MonoBehaviour:
@@ -57,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637388936915889646
+  lastModified: 637390721468341385
   LoadResult: 0
   FileSizes: []
   Exists: 1
