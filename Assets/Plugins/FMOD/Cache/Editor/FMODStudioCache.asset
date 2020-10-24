@@ -64,11 +64,11 @@ MonoBehaviour:
   - {fileID: 9169853651029389875}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 6000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   - {fileID: 9169853651029389875}
   StringsBanks:
   - {fileID: 7726360668106620570}
-  stringsBankWriteTime: 637391481998003743
+  stringsBankWriteTime: 637391741082009902
   cacheVersion: 5
 --- !u!114 &1602985138150122547
 MonoBehaviour:
@@ -167,7 +167,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1200065
+  Length: 1195065
 --- !u!114 &7726360668106620570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,11 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637391481998003743
+  lastModified: 637391741082009902
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1102
+    Value: 1140
   Exists: 1
 --- !u!114 &9140429104957808132
 MonoBehaviour:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637391481997523413
+  lastModified: 637391741081930113
   LoadResult: 0
   FileSizes: []
   Exists: 1

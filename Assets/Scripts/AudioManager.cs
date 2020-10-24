@@ -7,13 +7,16 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.EventInstance menuMusicEvent;
     FMOD.Studio.EventInstance startGameEvent;
     FMOD.Studio.EventInstance ambienceEvent;
+    FMOD.Studio.EventInstance playerSteps;
+    
+    
 
 
 
 
     //busses
-    FMOD.Studio.Bus TitleBus;
-
+    FMOD.Studio.Bus titleBus;
+    FMOD.Studio.Bus stepBus;
 
 
     [Tooltip("make this true if is main title scene")]
@@ -23,27 +26,41 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        TitleBus = FMODUnity.RuntimeManager.GetBus("bus:/Title");
+        titleBus = FMODUnity.RuntimeManager.GetBus("bus:/Title");
+        stepBus = FMODUnity.RuntimeManager.GetBus("bus:/Walking");
+        stepBus.setVolume(0);
         menuMusicEvent = FMODUnity.RuntimeManager.CreateInstance("event:/MenuMusic");
         startGameEvent = FMODUnity.RuntimeManager.CreateInstance("event:/StartGameUI");
-        ambienceEvent = FMODUnity.RuntimeManager.CreateInstance("");
-
-
+        ambienceEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience");
+        playerSteps = FMODUnity.RuntimeManager.CreateInstance("event:/PlayerSteps");
+        
         if (isTitleScene)
         {
             menuMusicEvent.start();
         }
         if (isMaze)
         {
-            ambienceEvent.start();
+            playerSteps.start();
+           ambienceEvent.start();
         }
         
     }
     
+    public void StartSteps()
+    {
+        stepBus.setVolume(1);
+    }
+
+    public void StopSteps()
+    {
+        stepBus.setVolume(0);
+    }
 
     public void StopMenuMusic()
     {
         startGameEvent.start();
-        TitleBus.setVolume(0);
+        titleBus.setVolume(0);
     }
+
+  
 }

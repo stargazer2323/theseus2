@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class CharacterMove : MonoBehaviour
 {
-
+    public GameManager gameManager;
+    public AudioManager audioManager;
     public GameObject inputField;
+    public Animator walkAnim;
     public Animator cantMoveAnim;
     public string steps;
     public int stepsNum;
@@ -22,6 +24,10 @@ public class CharacterMove : MonoBehaviour
     public bool cannotGoThere;
     public float moveSpeed = 3;
     public float rotationSpeed = 3;
+    public Transform minotaur;
+    public float deathRange;
+    public float distanceFromMinotaur = Mathf.Infinity;
+    
 
    
     private Vector3 newPos;
@@ -34,12 +40,13 @@ public class CharacterMove : MonoBehaviour
     private void Update()
     {
        MovePlayer();
+       CheckDistance();
     }
     void CheckMovement(Vector3 direction)
     {
         if (!moving)
         {
-
+            
             float moveSpaces = stepsNum * 10;
             RaycastHit hit;
 
@@ -54,6 +61,7 @@ public class CharacterMove : MonoBehaviour
             }
             else
             {
+                
                 var currentPos = player.transform.position;
                 newPos = currentPos + (direction * moveSpaces);
                 moving = true;
@@ -97,23 +105,41 @@ public class CharacterMove : MonoBehaviour
     {
         if (moving)
         {
-
+            
             player.transform.position = Vector3.MoveTowards(player.transform.position, newPos, moveSpeed * Time.deltaTime);
             if (player.transform.position == newPos)
-            {
+            {                
                 moving = false;
             }
             else
             {
+                audioManager.StartSteps();
+                walkAnim.SetTrigger("isWalking");
                 RotatePlayer(newPos - player.transform.position);
             }
 
         }
+        else
+        {
+            walkAnim.SetTrigger("isNotWalking");
+            audioManager.StopSteps();
+        }
 
     }
-     void RotatePlayer(Vector3 direction)
+    void RotatePlayer(Vector3 direction)
     {
         player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(direction.normalized),rotationSpeed);
+    }
+
+   
+    public void CheckDistance()
+    {
+        distanceFromMinotaur = Vector3.Distance(player.transform.position, minotaur.transform.position);
+        if (distanceFromMinotaur <= deathRange)
+        {
+            print("dead");
+            gameManager.Die();
+        }
     }
 
 

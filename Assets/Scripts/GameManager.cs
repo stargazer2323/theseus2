@@ -5,15 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    
 
-   
+
+
 
     public void WinGame()
     {
         SceneManager.LoadScene(2);
     }
 
+    public void Die()
+    {
+        SceneManager.LoadScene(3);
+    }
    
 
 }
