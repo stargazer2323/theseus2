@@ -8,15 +8,25 @@ public class LogsScript : MonoBehaviour
     public CharacterMove movementInput = new CharacterMove();
     public Text textLog;
     string displayLogs;
+    string displayLogs2;
+    int lenghtOfList;
 
+   
     public void logsText()
     {
-       foreach(var steps in movementInput.logInput)
-        {
-             displayLogs =displayLogs+ steps + "\n";
-            
-        }
-         textLog.text = displayLogs;
+         
+
+       
+            foreach (var steps in movementInput.logInput)
+            {
+                displayLogs = displayLogs + steps + " " ;
+
+            }
+            textLog.text = displayLogs;
+
+        
+      
+        
     }
 
 }
