@@ -69,11 +69,7 @@
 			<destination>{31e1dae5-4587-431e-b40e-4e621a53d122}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{1753d865-43d0-49c9-a45a-2729372ea87f}">
-		<property name="isProxyEnabled">
-			<value>false</value>
-		</property>
-	</object>
+	<object class="Timeline" id="{1753d865-43d0-49c9-a45a-2729372ea87f}" />
 	<object class="ActionSheet" id="{eb509ffc-b6ff-42a0-b56b-5b5914db1f00}">
 		<relationship name="modules">
 			<destination>{eacfc114-b2ca-464c-af06-8559177341d5}</destination>
@@ -98,6 +94,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{e1ff0018-9af2-4b9d-9474-d6740558b017}" />
 	<object class="EventMixerGroup" id="{31e1dae5-4587-431e-b40e-4e621a53d122}">
+		<property name="volume">
+			<value>-17</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

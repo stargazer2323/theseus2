@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{c64fecfd-1874-4372-b547-ff1b73b38545}">
+		<property name="assetPath">
+			<value>theseus step_1.aif</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.65573696145124716</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{619bb366-031f-458b-b271-6d321a696fb6}</destination>
+		</relationship>
+	</object>
+</objects>

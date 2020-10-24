@@ -22,5 +22,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{4e5f17eb-037d-4f3a-8ae2-31f8122020ea}" />
 	<object class="MixerBusFader" id="{b716fdb2-ad1f-4b02-b150-51f81e4874f3}" />
-	<object class="SFXReverbEffect" id="{74783aa0-9a21-4ae1-b5e8-d5fb8ecf8571}" />
+	<object class="SFXReverbEffect" id="{74783aa0-9a21-4ae1-b5e8-d5fb8ecf8571}">
+		<property name="decayTime">
+			<value>3500</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>62</value>
+		</property>
+	</object>
 </objects>
