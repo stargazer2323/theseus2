@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     FMOD.Studio.EventInstance menuMusicEvent;
+    [Tooltip("make this true if is main title screen")]
     public bool isTitleScene = false;
 
 
