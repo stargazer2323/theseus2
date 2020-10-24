@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{4aa0c147-c070-4b60-8908-6bd35b582826}">
+		<property name="assetPath">
+			<value>Labyrinth Ambience.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1200.0653061224489</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{619bb366-031f-458b-b271-6d321a696fb6}</destination>
+		</relationship>
+	</object>
+</objects>
