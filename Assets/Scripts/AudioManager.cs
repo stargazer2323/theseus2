@@ -12,12 +12,13 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         menuMusicEvent = FMODUnity.RuntimeManager.CreateInstance("event:/MenuMusic");
+        if (isTitleScene)
+        {
+            menuMusicEvent.start();
+        }
+        
+    }
     
-    }
-    public void PlayMenuMusic()
-    {
-        menuMusicEvent.start();
-    }
 
     public void StopMenuMusic()
     {

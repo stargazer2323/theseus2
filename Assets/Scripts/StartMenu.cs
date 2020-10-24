@@ -10,7 +10,7 @@ public class StartMenu : MonoBehaviour
 
     private void Start()
     {
-        audioManager.PlayMenuMusic();
+        
     }
 
 

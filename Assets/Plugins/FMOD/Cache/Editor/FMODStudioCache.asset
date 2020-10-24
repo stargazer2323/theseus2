@@ -67,12 +67,13 @@ MonoBehaviour:
   - {fileID: 6582511138088703426}
   - {fileID: -1271959717560670034}
   - {fileID: -1566421404325698233}
+  - {fileID: 9140429104957808132}
   EditorParameters: []
   MasterBanks:
   - {fileID: 9169853651029389875}
   StringsBanks:
   - {fileID: 7726360668106620570}
-  stringsBankWriteTime: 637391454472768657
+  stringsBankWriteTime: 637391407593379792
   cacheVersion: 5
 --- !u!114 &1602985138150122547
 MonoBehaviour:
@@ -136,13 +137,13 @@ MonoBehaviour:
   guid: 1d6643ae4cb78e4d842913237db768f1
   Banks:
   - {fileID: 9169853651029389875}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 1200065
 --- !u!114 &7726360668106620570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,12 +158,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637391454472768657
+  lastModified: 637391407593379792
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 944
+    Value: 1060
   Exists: 1
+--- !u!114 &9140429104957808132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Reverb
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Reverb
+  guid: 2a60f7e30e015441a93ada086281a8e6
+  Banks:
+  - {fileID: 9169853651029389875}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &9169853651029389875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637391454472758723
+  lastModified: 637391407593309694
   LoadResult: 0
   FileSizes: []
   Exists: 1
