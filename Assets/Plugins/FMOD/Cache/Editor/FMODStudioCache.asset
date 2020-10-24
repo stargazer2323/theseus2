@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7425915913410397484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/StartGameUI
+  m_EditorClassIdentifier: 
+  Path: event:/StartGameUI
+  guid: c720cd8884d4d5499e3df50eb31f636e
+  Banks:
+  - {fileID: 9169853651029389875}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2063
 --- !u!114 &-1566421404325698233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,13 +39,13 @@ MonoBehaviour:
   guid: 403756e5bddb844b9e462f2c00e894fb
   Banks:
   - {fileID: 9169853651029389875}
-  IsStream: 0
+  IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 68075
 --- !u!114 &-1271959717560670034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,12 +91,13 @@ MonoBehaviour:
   - {fileID: -1271959717560670034}
   - {fileID: -1566421404325698233}
   - {fileID: 9140429104957808132}
+  - {fileID: -7425915913410397484}
   EditorParameters: []
   MasterBanks:
   - {fileID: 9169853651029389875}
   StringsBanks:
   - {fileID: 7726360668106620570}
-  stringsBankWriteTime: 637391490054345767
+  stringsBankWriteTime: 637391481998003743
   cacheVersion: 5
 --- !u!114 &1602985138150122547
 MonoBehaviour:
@@ -158,11 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637391490054345767
+  lastModified: 637391481998003743
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1060
+    Value: 1102
   Exists: 1
 --- !u!114 &9140429104957808132
 MonoBehaviour:
@@ -201,7 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD Project/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637391490054320891
+  lastModified: 637391481997523413
   LoadResult: 0
   FileSizes: []
   Exists: 1

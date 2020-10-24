@@ -11,7 +11,7 @@ public class CharacterMove : MonoBehaviour
     public Animator cantMoveAnim;
     public string steps;
     public int stepsNum;
-    public GameObject cube;
+    public GameObject player;
     public string direction;
     public string north = "north";
     public string south = "south";
@@ -20,15 +20,50 @@ public class CharacterMove : MonoBehaviour
     RaycastHit hit;
     public List<String> logInput = new List<String>();
     public bool cannotGoThere;
+    public float moveSpeed = 3;
+    public float rotationSpeed = 3;
 
-
+   
+    private Vector3 newPos;
+    private bool moving;
     private void Start()
     {
-
-
+        moving = false;
     }
 
-    public void PlayerMove()
+    private void Update()
+    {
+       MovePlayer();
+    }
+    void CheckMovement(Vector3 direction)
+    {
+        if (!moving)
+        {
+
+            float moveSpaces = stepsNum * 10;
+            RaycastHit hit;
+
+            Physics.Raycast(player.transform.position, direction, out hit);
+
+            print("collider " + hit.collider.name);
+            if (hit.distance <= moveSpaces)
+            {
+                cantMoveAnim.SetTrigger("cantMove");
+                print("cant move in " + direction);
+                cannotGoThere = true;
+            }
+            else
+            {
+                var currentPos = player.transform.position;
+                newPos = currentPos + (direction * moveSpaces);
+                moving = true;
+
+            }
+        }
+    }
+
+
+    public void CheckInput()
     {
 
         steps = inputField.GetComponent<Text>().text;
@@ -37,102 +72,49 @@ public class CharacterMove : MonoBehaviour
         int stepsInt = Int32.Parse(words[0]);
         direction = words[1];
         stepsNum = stepsInt;
-         
 
-
-
-        if (direction.Equals(north, StringComparison.OrdinalIgnoreCase)) //Moves to north
+        if (direction.Equals(north, StringComparison.OrdinalIgnoreCase)) //north
         {
-            float moveSpaces = stepsNum * 10;
-
-            RaycastHit hitNorth;
-            Physics.Raycast(cube.transform.position, Vector3.forward, out hitNorth);
-
-            var currentPos = cube.transform.position;
-            var newPosW = currentPos + Vector3.forward * moveSpaces;
-            if (hitNorth.distance <= moveSpaces)
-            {
-                cantMoveAnim.SetTrigger("cantMove");
-                print("cannot Move here ");
-                cannotGoThere = true;
-            }
-            else
-            {
-                cube.transform.position = newPosW;
-                currentPos = newPosW;
-            }
+            CheckMovement(Vector3.forward);
         }
 
-
-        if (direction.Equals(west, StringComparison.OrdinalIgnoreCase)) // a moves player left one space 
+        if (direction.Equals(west, StringComparison.OrdinalIgnoreCase)) //east
         {
-            float moveSpaces = stepsNum * 10;
-
-            RaycastHit hitWest;
-            Physics.Raycast(cube.transform.position, Vector3.left, out hitWest);
-
-            var currentPos = cube.transform.position;
-            var newPosW = currentPos + Vector3.left * moveSpaces;
-            if (hitWest.distance <= moveSpaces)
-            {
-                cantMoveAnim.SetTrigger("cantMove");
-                print("cannot Move here "); 
-                cannotGoThere = true;
-            }
-            else
-            {
-
-                cube.transform.position = newPosW;
-                currentPos = newPosW;
-            }
+            CheckMovement(Vector3.left);
+        }
+        if (direction.Equals(south, StringComparison.OrdinalIgnoreCase)) //south
+        {
+            CheckMovement(Vector3.back);
         }
 
-        if (direction.Equals(east, StringComparison.OrdinalIgnoreCase))
+        if (direction.Equals(east, StringComparison.OrdinalIgnoreCase)) //west
         {
-            float moveSpaces = stepsNum * 10;
-
-            RaycastHit hitEast;
-            Physics.Raycast(cube.transform.position, Vector3.right, out hitEast);
-
-            var currentPos = cube.transform.position;
-            var newPosW = currentPos + Vector3.right * moveSpaces;
-            if (hitEast.distance <= moveSpaces)
-            {
-                cantMoveAnim.SetTrigger("cantMove");
-                print("cannot Move here ");
-                cannotGoThere = true;
-            }
-            else
-            {
-                cube.transform.position = newPosW;
-                currentPos = newPosW;
-            }
-        }
-
-        if (direction.Equals(south, StringComparison.OrdinalIgnoreCase)) // s moves player back one space 
-        {
-            float moveSpaces = stepsNum * 10;
-
-            RaycastHit hitSouth;
-            Physics.Raycast(cube.transform.position, Vector3.back, out hitSouth);
-
-            var currentPos = cube.transform.position;
-            var newPosW = currentPos + Vector3.back * moveSpaces;
-            if (hitSouth.distance <= moveSpaces)
-            {
-                cantMoveAnim.SetTrigger("cantMove");
-                print("cannot Move here ");
-                cannotGoThere = true;
-            }
-            else
-            {
-                cube.transform.position = newPosW;
-                currentPos = newPosW;
-            }
-            print("im here");
+            CheckMovement(Vector3.right);
         }
     }
 
+    public void MovePlayer()
+    {
+        if (moving)
+        {
+
+            player.transform.position = Vector3.MoveTowards(player.transform.position, newPos, moveSpeed * Time.deltaTime);
+            if (player.transform.position == newPos)
+            {
+                moving = false;
+            }
+            else
+            {
+                RotatePlayer(newPos - player.transform.position);
+            }
+
+        }
+
+    }
+     void RotatePlayer(Vector3 direction)
+    {
+        player.transform.rotation = Quaternion.Slerp(player.transform.rotation, Quaternion.LookRotation(direction.normalized),rotationSpeed);
+    }
 
 
 }
