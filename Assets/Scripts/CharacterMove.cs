@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -79,6 +80,11 @@ public class CharacterMove : MonoBehaviour
 
         steps = inputField.GetComponent<Text>().text;
         logInput.Add(steps);
+      /*  if (cannotGoThere==true)
+        {
+            print("im ehere");
+            logInput.Remove(logInput.Last());
+        }*/
         string[] words = steps.Split(' ');
         int stepsInt = Int32.Parse(words[0]);
         direction = words[1];

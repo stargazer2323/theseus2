@@ -14,14 +14,21 @@ public class LogsScript : MonoBehaviour
    
     public void logsText()
     {
-         
 
-       
+
+            displayLogs = " ";
+        if (movementInput.logInput.Count < 15)
+        {
             foreach (var steps in movementInput.logInput)
             {
-                displayLogs = displayLogs + steps + " " ;
+                displayLogs = displayLogs + steps + "\n";
 
             }
+        }
+        else
+        {
+            displayLogs = movementInput.logInput[movementInput.logInput.Count - 5] + "\n" + movementInput.logInput[movementInput.logInput.Count - 4] + "\n" + movementInput.logInput[movementInput.logInput.Count - 3] + "\n" + movementInput.logInput[movementInput.logInput.Count - 2] + "\n" + movementInput.logInput[movementInput.logInput.Count - 1] ;
+        }
             textLog.text = displayLogs;
 
         
