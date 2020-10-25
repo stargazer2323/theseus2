@@ -93,20 +93,40 @@ public class CharacterMove : MonoBehaviour
         if (direction.Equals(north, StringComparison.OrdinalIgnoreCase)) //north
         {
             CheckMovement(Vector3.forward);
+            if (cannotGoThere == true)
+            {
+                print("im ehere");
+                logInput.Remove(logInput.Last());
+            }
         }
 
         if (direction.Equals(west, StringComparison.OrdinalIgnoreCase)) //east
         {
             CheckMovement(Vector3.left);
+            if (cannotGoThere == true)
+            {
+                print("im ehere");
+                logInput.Remove(logInput.Last());
+            }
         }
         if (direction.Equals(south, StringComparison.OrdinalIgnoreCase)) //south
         {
             CheckMovement(Vector3.back);
+            if (cannotGoThere == true)
+            {
+                print("im ehere");
+                logInput.Remove(logInput.Last());
+            }
         }
 
         if (direction.Equals(east, StringComparison.OrdinalIgnoreCase)) //west
         {
             CheckMovement(Vector3.right);
+            if (cannotGoThere == true)
+            {
+                print("im ehere");
+                logInput.Remove(logInput.Last());
+            }
         }
     }
 
