@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(3);
     }
    
-
+    public void OpenFootStepRiddle()
+    {
+        footStepRiddle.SetActive(true);
+    }
     public void FootStepRiddleWin()
     {
         footStepRiddle.SetActive(false);
