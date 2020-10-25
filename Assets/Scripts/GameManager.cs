@@ -15,10 +15,27 @@ public class GameManager : MonoBehaviour
     public GameObject fireLights;
     public GameObject fireRiddle;
     public bool fireTriggered;
+    [Header("Fire")]
+    public GameObject mirrorLights;
+    public GameObject mirrorRiddle;
+    public bool mirrorTriggered;
 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
     public void WinGame()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void Die()
@@ -67,6 +84,28 @@ public class GameManager : MonoBehaviour
     public void FireRiddleLose()
     {
         fireRiddle.SetActive(false);
+        betterLuck.SetTrigger("StartRunning");
+    }
+
+    //for the mirror riddle
+    public void OpenMirrorRiddle()
+    {
+        if (!mirrorTriggered)
+        {
+            mirrorRiddle.SetActive(true);
+            mirrorTriggered = true;
+        }
+    }
+    public void MirrorRiddleWin()
+    {
+        mirrorRiddle.SetActive(false);
+        mirrorLights.SetActive(true);
+        correct.SetTrigger("correct");
+    }
+
+    public void MirrorRiddleLose()
+    {
+        mirrorRiddle.SetActive(false);
         betterLuck.SetTrigger("StartRunning");
     }
 }
