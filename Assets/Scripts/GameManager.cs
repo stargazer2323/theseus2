@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject footStepLights;
     public GameObject footStepRiddle;
     public Animator betterLuck;
-
+    public Animator correct;
 
     public void WinGame()
     {
@@ -28,12 +28,13 @@ public class GameManager : MonoBehaviour
     {
         footStepRiddle.SetActive(false);
         footStepLights.SetActive(true);
+        correct.SetTrigger("correct");
     }
 
     public void FootstepRiddleLose()
     {
         footStepRiddle.SetActive(false);
-        betterLuck.SetTrigger("");
+        betterLuck.SetTrigger("StartRunning");
     }
 
 }
