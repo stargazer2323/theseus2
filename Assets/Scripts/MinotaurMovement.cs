@@ -7,6 +7,7 @@ using UnityEngine.Animations;
 
 public class MinotaurMovement : MonoBehaviour
 {
+    public Animator walkAnim;
     public GameObject player;
     public NavMeshAgent agent;
     public GameObject minotaur;
@@ -25,7 +26,7 @@ public class MinotaurMovement : MonoBehaviour
 
     private void Update()
     {
-
+        AnimateWalk();
         if (minotaurMoving) 
         {
             int moveSq= move.stepsNum*10;
@@ -76,6 +77,18 @@ public class MinotaurMovement : MonoBehaviour
         }
 
 
+    }
+
+    public void AnimateWalk()
+    {
+        if (minotaurMoving)
+        {
+            walkAnim.SetTrigger("Walk");
+        }
+        else if (!minotaurMoving)
+        {
+            walkAnim.SetTrigger("DontWalk");
+        }
     }
 
 }
