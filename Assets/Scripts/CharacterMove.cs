@@ -27,13 +27,16 @@ public class CharacterMove : MonoBehaviour
     public Transform minotaur;
     public float deathRange;
     public float distanceFromMinotaur = Mathf.Infinity;
+    private  int layerMask = 1 << 2;
     
 
-   
+
+
     private Vector3 newPos;
     private bool moving;
     private void Start()
     {
+        layerMask = ~layerMask;
         moving = false;
     }
 
@@ -50,9 +53,9 @@ public class CharacterMove : MonoBehaviour
             float moveSpaces = stepsNum * 10;
             RaycastHit hit;
             
-            Physics.Raycast(player.transform.position, direction, out hit);
+            Physics.Raycast(player.transform.position, direction,  out hit, Mathf.Infinity, layerMask);
 
-            print("collider " + hit.collider.name);
+           
             if (hit.distance <= moveSpaces)
             {
                 cantMoveAnim.SetTrigger("cantMove");

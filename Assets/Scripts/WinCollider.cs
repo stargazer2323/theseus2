@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class WinCollider : MonoBehaviour
 {
-    GameManager gameManager;
-    private void OnTriggerEnter(Collider other)
+    public GameManager gameManager;
+    
+
+    private void OnTriggerEnter (Collider other)
     {
+        print(other.gameObject.name);
+
         if (other.gameObject.CompareTag("Player"))
         {
             print("You Win!");
@@ -14,5 +18,4 @@ public class WinCollider : MonoBehaviour
 
         }
     }
-
 }
