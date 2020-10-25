@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-
+    public GameObject footStepLights;
+    public GameObject footStepRiddle;
+    public Animator betterLuck;
 
 
     public void WinGame()
@@ -19,5 +20,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(3);
     }
    
+
+    public void FootStepRiddleWin()
+    {
+        footStepRiddle.SetActive(false);
+        footStepLights.SetActive(true);
+    }
+
+    public void FootstepRiddleLose()
+    {
+        footStepRiddle.SetActive(false);
+        betterLuck.SetTrigger("");
+    }
 
 }
