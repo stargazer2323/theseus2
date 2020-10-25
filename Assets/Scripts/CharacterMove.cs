@@ -49,7 +49,7 @@ public class CharacterMove : MonoBehaviour
             
             float moveSpaces = stepsNum * 10;
             RaycastHit hit;
-
+            
             Physics.Raycast(player.transform.position, direction, out hit);
 
             print("collider " + hit.collider.name);
@@ -141,6 +141,9 @@ public class CharacterMove : MonoBehaviour
             gameManager.Die();
         }
     }
+
+
+  
 
 
 }
