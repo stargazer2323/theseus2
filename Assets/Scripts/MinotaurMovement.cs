@@ -7,6 +7,10 @@ using UnityEngine.Animations;
 
 public class MinotaurMovement : MonoBehaviour
 {
+    // in this script we move the minotaur the same steps as the player .We implement the animation for the movement 
+    // Also when the player hits a wall the minotaur does not move 
+    
+   
     public Animator walkAnim;
     public GameObject player;
     public NavMeshAgent agent;

@@ -7,6 +7,15 @@ using UnityEngine.UI;
 
 public class CharacterMove : MonoBehaviour
 {
+    //In this script we take the input field and move the player accordingly
+    //We also store the steps the player moves so the minotaur moves the smae steps 
+    //We use raycast so the player does not hit on walls 
+    // When the minotaur is in the same position we die
+
+
+
+
+
     public GameManager gameManager;
     public Death death;
     public AudioManager audioManager;

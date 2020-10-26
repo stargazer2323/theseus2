@@ -14,7 +14,7 @@ public class LogsScript : MonoBehaviour
    
     public void logsText()
     {
-
+        //prints the movement of the player .If the list is beyond size 20 it prints the last five inputs
 
             displayLogs = " ";
         if (movementInput.logInput.Count < 15)
