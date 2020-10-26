@@ -38,10 +38,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void Die()
-    {
-        SceneManager.LoadScene(3);
-    }
+   
 
    //footstep riddle
     public void OpenFootStepRiddle()

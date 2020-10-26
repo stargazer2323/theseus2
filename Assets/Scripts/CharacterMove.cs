@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CharacterMove : MonoBehaviour
 {
     public GameManager gameManager;
+    public Death death;
     public AudioManager audioManager;
     public GameObject inputField;
     public Animator walkAnim;
@@ -167,7 +168,7 @@ public class CharacterMove : MonoBehaviour
         if (distanceFromMinotaur <= deathRange)
         {
             print("dead");
-            gameManager.Die();
+            death.DieAnim();
         }
     }
 
