@@ -22,11 +22,13 @@ public class StartMenu : MonoBehaviour
 
     public void OpenInstructions()
     {
+        audioManager.InstructOpen();
         instructions.SetActive(true);
     }
 
     public void CloseInstructions()
     {
+        audioManager.InstructClose();
         instructions.SetActive(false);
     }
 }

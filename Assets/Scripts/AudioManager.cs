@@ -9,7 +9,9 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.EventInstance ambienceEvent;
     FMOD.Studio.EventInstance playerSteps;
     FMOD.Studio.EventInstance winMusic;
-   
+    FMOD.Studio.EventInstance instructOpen;
+    FMOD.Studio.EventInstance instructClose;
+
     FMOD.Studio.Bus titleBus;
     FMOD.Studio.Bus stepBus;
 
@@ -47,7 +49,17 @@ public class AudioManager : MonoBehaviour
         titleBus.setVolume(0);
     }
 
-  
+    public void InstructOpen()
+    {
+        instructOpen.start();
+    }
+
+    public void InstructClose()
+    {
+        instructClose.start();
+    }
+
+
     public void StartSounds()
     {
         if (isTitleScene)
@@ -85,6 +97,8 @@ public class AudioManager : MonoBehaviour
         ambienceEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience");
         playerSteps = FMODUnity.RuntimeManager.CreateInstance("event:/PlayerSteps");
         winMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Win music");
+        instructOpen = FMODUnity.RuntimeManager.CreateInstance("event:/instructOpen");
+        instructClose = FMODUnity.RuntimeManager.CreateInstance("event:/instruct close");
     }
 
 }
